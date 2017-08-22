@@ -36,24 +36,26 @@
   <ion-list>
     <ion-item>
       <ion-label stacked>Nombre:</ion-label>
-      <ion-input placeholder="Digite su nombre"></ion-input>
-    </ion-item>
+        <ion-input [(ngModel)]="contacto.nombre" name="nombre" placeholder="Digite su nombre"></ion-input>
+      </ion-item>
     <ion-item>
       <ion-label stacked>Apellido:</ion-label>
-      <ion-input placeholder="Digite su apellido"></ion-input>
+      <ion-input [(ngModel)]="contacto.apellido" name="apellido" placeholder="Digite su apellido"></ion-input>
+
     </ion-item>
   </ion-list>
   <ion-item>
     <ion-label stacked>Telefono:</ion-label>
-    <ion-input type="tel" placeholder="Digite su telefono"></ion-input>
+    <ion-input [(ngModel)]="contacto.telefono" name="telefono" placeholder="Digite su telefono"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Correo:</ion-label>
-    <ion-input type="email"></ion-input>
+    <ion-input [(ngModel)]="contacto.email" name="email" placeholder="Digite su correo electronico"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Fecha de Nacimiento</ion-label>
     <ion-datetime type="date"></ion-datetime>
+    <ion-input [(ngModel)]="contacto.fecnac" name="fecnac" placeholder="Digite su fecha de nacimiento"></ion-input>
   </ion-item>
    <div radio-group>
   <ion-list-header>
@@ -67,6 +69,7 @@
        <ion-label>Femenimo</ion-label>
        <ion-radio value="F"></ion-radio>
      </ion-item>
+     <ion-input [(ngModel)]="contacto.sexo" name="sexo" placeholder=""></ion-input>
    </div>
    <div padding>
       <button ion-button (click)="guardar()" type="submit">Guardar</button>

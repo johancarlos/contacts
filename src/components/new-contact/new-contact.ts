@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
+import { ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the NewContact component.
@@ -14,8 +15,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class NewContact {
 
-  text: string;
-
+  //text: string;
+  contacto:any = {};
   /*contacto: any = {
     nombre:'qwe',
     apellido: 'asdfg',
@@ -27,19 +28,13 @@ export class NewContact {
   */
 
   items: FirebaseListObservable<any[]>;
-  constructor(db: AngularFireDatabase) {
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController,
+ db: AngularFireDatabase) {
     this.items = db.list('/Contactos');
   }
   guardar(){
-    //this.items.push(this.form);
-    this.items.push({
-    nombre: 'nombre',
-    apellido: ['apellido'],
-    telefono: [' '],
-    email: [' '],
-    fecnac: [' '],
-    genero: [' ']
-  });
+    this.items.push(this.contacto);
+    this.viewCtrl.dismiss();
   }
 
 }
