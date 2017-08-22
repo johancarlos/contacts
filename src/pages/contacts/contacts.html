@@ -2,14 +2,14 @@
   <ion-navbar>
    <ion-grid>
       <ion-row justify-content-center>
-        <ion-col col-2>
+        <!--<ion-col col-2>
           <button (click)="editCContact()" ion-button clear>
             <ion-icon name="create"></ion-icon>
           </button>
-        </ion-col>
-        <ion-col col-8>
+        </ion-col>-->
+        <ion-col col-10>
           <ion-title>
-            Agenda Telefonica
+            A. Telefonica
           </ion-title>
         </ion-col>
         <ion-col col-2>
@@ -24,11 +24,41 @@
 </ion-header>
 
 <ion-content padding>
-  <h2></h2>
-  <p>
-    hello.
-  </p>
-  <p>
-   Agenda
-  </p>
+ <ion-item>
+        <ul>
+          <li class="text" *ngFor="let item of items | async">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2>
+                <ion-avatar item-left>
+                  <img src="https://cdn1.iconfinder.com/data/icons/profession-avatar-solid-2/48/55-512.png">
+                </ion-avatar>
+              </ion-col>
+              <ion-col col-8>
+                <h2>{{ item.nombre }}</h2>
+                <h3>{{ item.telefono }}</h3>
+                <p>{{ item.email }}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </li>
+        </ul>
+
+</ion-item>
+
+<!--
+<ion-list>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="img/avatar-finn.png">
+    </ion-avatar>
+    <h2>{{item.nombre}}</h2>
+    <h3>{{item.telefono}}</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+  </ion-item>
+</ion-list>
+-->
+
+
+
 </ion-content>
